@@ -1,18 +1,28 @@
 site_name: MkLorum
 site_url: https://example.com
 nav:
-  - Home: index.md
-  - About: about.md
+- Home: index.md
+- About: about.md
+- My mkdocstrings page: my_page.md
 theme:
   name: material
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        rendering:
+          show_root_heading: True
+          show_signature_annotations: True
+    watch:
+    - src
